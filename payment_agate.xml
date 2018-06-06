@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="j2store" method="upgrade">
+    <name>Agate Payment for j2store</name>
+    <version>2</version>
+    <creationDate>08.05.2018</creationDate>
+    <author>Agate</author>
+    <authorEmail>info@agate.io</authorEmail>
+    <authorUrl>https://www.agate.services/</authorUrl>
+    <copyright>Agate</copyright>
+    <description>J2STORE_AGATE_PAYMENT_DESC</description>
+    <scriptfile>script.payment_agate.php</scriptfile>
+    <files>
+        <filename plugin="payment_agate">payment_agate.php</filename>
+        <filename>index.html</filename>
+        <folder>helpers</folder>
+        <folder>payment_agate</folder>
+        <folder>validation</folder>
+    </files>
+    <languages folder="admin">
+        <language tag="en-GB">languages/en-GB.plg_j2store_payment_agate.ini</language>
+        <language tag="en-GB">languages/en-GB.plg_j2store_payment_agate.sys.ini</language>
+    </languages>
+	<media folder="/" destination="j2store/images/payment/agate">
+        <filename>icon.png</filename>
+	</media>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addrulepath="plugins/j2store/payment_agate/validation">
+                <field name="display_name" type="text" size="30" default="Agate Payment" label="j2store_plugin_display_name" description="j2store_plugin_display_name_desc" required="required" />
+                <field type="spacer" />
+                <field name="api_key" type="text" default="" label="API KEY" description="Api Key" required="required" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
