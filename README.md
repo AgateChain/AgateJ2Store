@@ -18,3 +18,8 @@ The Joomla Extension Manager expects a zip file for installation. The contents o
 6. Get your API Key of your merchant account from Agate.
 7. Select "Agate Payment for j2store" and you can now configure your payment plugin, enter your API Key from step 6.
 8. Click save and close.
+
+Try How It Works ?
+====================
+
+We have created a demo website for you to test the plugin, feel free to visit [here](http://joomla37.agate.services/index.php/shop) .
