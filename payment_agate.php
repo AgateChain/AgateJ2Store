@@ -255,10 +255,10 @@ class plgJ2StorePayment_agate extends J2StorePaymentPlugin {
         }
         return 0;
     }
-
+    
+    // Convert all the currency to USD.
     public function convertCurToIUSD($url, $amount, $api_key, $currencySymbol) {
         error_log("Entered into Convert Amount");
-        // return Agate::convert_irr_to_btc($url, $amount, $signature);
         $ch = curl_init($url.'?api_key='.$api_key.'&currency='.$currencySymbol.'&amount='. $amount);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -269,7 +269,7 @@ class plgJ2StorePayment_agate extends J2StorePaymentPlugin {
       $result = curl_exec($ch);
       $data = json_decode( $result , true);
       error_log("Response => ".var_export($data, TRUE));;
-      // Return the equivalent bitcoin value acquired from Agate server.
+      // Return the equivalent value acquired from Agate server.
       return (float) $data["result"];
 
       }
